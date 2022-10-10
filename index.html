@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<title>JavaScript</title>
+</head>
+<body>
+	<div class="main">
+		<h1>JavaScript</h1>
+		<div class="chapter">
+			<h2>Intro</h2>
+			<div>
+				<p><code>script</code> - html tag to add js</p>
+				<p>+ <code>src</code> - path to the js file</p>
+				<p>! alternatively js can be put directly between the tags</p>
+				<p><code>object.method('parameters');</code> - calls a method of that object</p>
+			</div>
+		</div>
+		<!-- /.chapter intro -->
+		<div class="chapter">
+			<h2>Basics</h2>
+			<div>
+				<p><code>/* ... */</code> - multi-line comment</p>
+				<p><code>// ...</code> - single-line comment</p>
+				<p><code>var/let/const varName;</code> - variable declaration</p>
+				<p><code>varName = value;</code> - value assignment</p>
+				<p>! use <code>+=</code> operator to add content to an existing var</p>
+				<h3>Data Types</h3>
+				<p class="example">Simple/Primitive:</p>
+				<p><code>var numericData = 369;</code> - numeric data type</p>
+				<p><code>var stringData = 'Hello World';</code> - string data type</p>
+				<p>! to escape a character in a string use <code>\</code></p>
+				<p><code>var booleanData = true;</code> - boolean data type</p>
+				<p><code>var undefinedData;</code> - undefined, var declared but no value is set</p>
+				<p><span class="value">null</span> - a variable with no value / lost value</p>
+				<p class="example">Complex:</p>
+				<p><span class="value">object</span> - complex data type, arrays and functions are objects</p>
+				<h3>Rules for Variable Names</h3>
+				<p>must begin with a <code>letter/$/_</code></p>
+				<p>can contain <code>letter/number/$/_</code></p>
+				<p>must not contain <code>-/.</code></p>
+				<p>can not use <code>keywords/reserved words</code></p>
+				<p>use <code>camelCasing</code> or <code>_</code> for longer variable names</p>
+				<p>! variables are case sensitive</p>
+				<h3>Arrays</h3>
+				<p><code>colors = ['red', 'green', 'blue'];</code> - array literal</p>
+				<p><code>colors = new Array('red', 'green', 'blue');</code> - array constructor</p>
+				<p><code>colors[0];</code> - access a value in an array literal</p>
+				<p><code>colors.item(0);</code> - access a value in an array constructor</p>
+				<p><code>colors[0] = 'white';</code> - change a value in an array literal</p>
+				<p><code>colors.item(0) = 'white';</code> - change a value in an array constructor</p>
+				<p><code>colors.length</code> - access the number of items in an array</p>
+				<h3>Expressions</h3>
+				<p>! an expression evaluates into a single value</p>
+				<p><code>var color = 'violet';</code> - single value expression</p>
+				<p><code>var pixelNumber = 1024 * 768;</code> - multiple value expression</p>
+				<h3>Operators</h3>
+				<p><code>=</code> - assignment operator</p>
+				<p><code>+ - / * ++ -- %</code> - arithmetic operators</p>
+				<p><code>++</code> - increment, adds 1 to the current number</p>
+				<p><code>--</code> - decrement, subtracts 1 from the current number</p>
+				<p><code>%</code> - modulus, divides two values and returns the remainder</p>
+				<p><code>+</code> - string operator</p>
+				<p>! concatenation - act of joining strings into a single string</p>
+				<p>! use <code>+=</code> operator to add content to an existing var</p>
+				<p class="example">Example</p>
+				<p><code>
+					var stringOne = 'Hello ';<br>
+					var stringTwo = 'World!';<br>
+					var newString = stringOne + stringTwo;
+				</code></p>
+			</div>
+		</div>
+		<!-- /.chapter basics -->
+		<div class="chapter">
+			<h2>Functions, Methods & Objects</h2>
+			<div>
+				<p><code>function doSomething() {...}</code> - function declaration</p>
+				<p><code>doSomething();</code> - calling a function</p>
+				<p><code>function doStuff(paramOne, paramTwo) {...}</code> - fn declaration with the parameters</p>
+				<p><code>doStuff(argOne, argTwo);</code> - fn call with the arguments to be used by the function</p>
+				<p>! arguments can be passed as values or as variables</p>
+				<h3>Return</h3>
+				<p class="example">Get a single value out of the function:</p>
+				<p><code>
+					function addNumbers(numberOne, numberTwo) {<br>
+					var newNumber = numberOne + numberTwo;<br>
+					<b>return</b> newNumber;<br>
+					}<br>
+					var totalPrice = addNumbers(12, 24);
+				</code></p>
+				<p class="output">
+					Output: 
+					<script type="text/javascript">
+						function addNumbers(numberOne, numberTwo) {
+							var newNumber = numberOne + numberTwo;
+							return newNumber;
+						}
+						var myNumber = addNumbers(12, 24);
+						document.write(myNumber);
+					</script>
+				</p>
+				<p class="example">Get an array of values out of the function:</p>
+				<p><code>
+					function renovation(floorX, floorY, height) {<br>
+					var floorArea = floorX * floorY;<br>
+					var wallArea = (floorX * 2 + floorY * 2) * height;<br>
+					var roomAreas = [floorArea, wallArea];<br>
+					<b>return</b> roomAreas;<br>
+					}<br>
+					var myWalls = renovation(4, 5, 3)[1];
+				</code></p>
+				<p class="output">
+					Output:
+					<script type="text/javascript">
+						function myRenovation(floorX, floorY, height) {
+							let floorArea = floorX * floorY;
+							let wallArea = (floorX * 2 + floorY * 2) *height;
+							let roomAreas = [floorArea, wallArea];
+							return roomAreas;
+						}
+						let myWalls = myRenovation(4, 5, 3)[1];
+						document.write(myWalls);
+					</script>
+				</p>
+				<h3>Function Expressions</h3>
+				<p class="example">Function as an expression:</p>
+				<p><code>
+					var tbToMb = function(tb) {<br>
+					return tb * 1024 * 1024;<br>
+					};<br>
+					var twoTb = tbtoMb(2);
+				</code></p>
+				<p class="output">
+					Output:
+					<script type="text/javascript">
+						var tbToMb = function(tb) {
+							return tb * 1024 *1024;
+						};
+						document.write(tbToMb(2));
+					</script>
+				</p>
+				<p>! function without a name is called anonymous</p>
+				<p class="example">Immediately invoked function expression (IIFE):</p>
+				<p><code>
+					var oneTbToMb = (function() {<br>
+					return 1024 * 1024;<br>
+					})();
+				</code></p>
+				<p class="output">
+					Output:
+					<script type="text/javascript">
+						var oneTb2Mb = (function() {
+							return 1024 * 1024;
+						})();
+						document.write(oneTb2Mb);
+					</script>
+				</p>
+				<p>! IIFE saves only the return value, so it can't be used later</p>
+				<h3>Variable Scope</h3>
+				<p>Two types of variables:</p>
+				<ul>
+					<li>Local scope variables (function-level)</li>
+					<li>Global scope variables (declared outside the function)</li>
+				</ul>
+				<hr>
+				<h3>Objects</h3>
+				<p>Inside the object:</p>
+				<ul>
+					<li>Variables become properties</li>
+					<li>Functions become methods</li>
+				</ul>
+				<p class="example">Creating an object: literal notation:</p>
+				<p><code>
+					var item = {<br>
+					name: 'PS5',<br>
+					stock: 1000,<br>
+					ordered: 999,<br>
+					available: function() {<br>
+					return this.stock - this.ordered;<br>
+					}<br>
+					};
+				</code></p>
+				<p class="example">Creating an object: constructor notation:</p>
+				<p><code>
+					var item = new Object();<br>
+					item.name = 'PS5';<br>
+					item.stock = 1000;<br>
+					item.ordered = 999;<br>
+					item.available = function() {<br>
+						return this.stock - this.ordered;<br>
+					};
+				</code></p>
+				<p class="example">Accessing an object: dot notation:</p>
+				<p><code>
+					var itemName = item.name;<br>
+					var availability = item.available();
+				</code></p>
+				<p class="output">
+					Output:
+					<script type="text/javascript">
+						const ps5console = {
+							name: 'PlayStation 5',
+							price: 499,
+							stock: 1000,
+							ordered: 1000,
+							available: function() {
+								return this.stock - this.ordered;
+							}
+						};
+						document.write(ps5console.name + ' (Units Left: ' + ps5console.available() + ')')
+					</script>
+				</p>
+				<p class="example">Updating an object: dot notation:</p>
+				<p><code>
+					item.stock = 9000;<br>
+					item.ordered = 6969;
+				</code></p>
+				<p class="example">Accessing an object: bracket syntax:</p>
+				<p><code>
+					var itemName = item['name'];
+				</code></p>
+				<p class="example">Updating an object: bracket syntax:</p>
+				<p><code>
+					item['name'] = 'Xbox';
+				</code></p>
+				<p>! you can not access/update methods using bracket syntax</p>
+				<p class="example">Creating many objects: constructor notation (function):</p>
+				<p><code>
+					function OledTv(name, size, price) {<br>
+						this.name = name;<br>
+						this.size = size;<br>
+						this.price = price;<br>
+						this.pricePerInch = function() {<br>
+							return this.price / this.size;<br>
+						};<br>
+					}
+				</code></p>
+				<p>! it is common to name the constructor function capitalized</p>
+				<p class="example">Creating & accessing instances of the object:</p>
+				<p><code>
+					var lgC148 = new OledTv('LG C1', 48, 989);<br>
+					var lgC155 = new OledTv('LG C1', 55, 1240);<br>
+					var lg48Pri = lgC148.price;<br>
+					var lg48Ppi = lgC148.pricePerInch();
+				</code></p>
+				<p class="output">
+					Output:
+					<script type="text/javascript">
+						function OledTV(name, size, price) {
+							this.name = name;
+							this.size = size;
+							this.price = price;
+							this.pricePerInch = function() {
+								return this.price / this.size;
+							};
+						}
+						const lg48inC1 = new OledTV('LG C1', 48, 989);
+						document.write(lg48inC1.name + ' ' + lg48inC1.size + ' inch PPI: ' + lg48inC1.pricePerInch());
+					</script>
+				</p>
+				<p class="example">Removing and adding properties and methods:</p>
+				<p><code>
+					<b>delete</b> someObject.someProperty;<br>
+					someObject.someNewProperty = 'Yay! A New Property';
+				</code></p>
+				<p class="example">Objects can also have arrays as property values:</p>
+				<p><code>
+					someObject.someNewProp = [16, 32, 64, 128, 256];<br>
+					someObject.someNewProp[2]; //access
+				</code></p>
+				<p class="output">
+					Output:
+					<script type="text/javascript">
+						let someObject = {};
+						someObject.someNewProp = [16, 32, 64, 128, 256];
+						document.write(someObject.someNewProp[2]);
+					</script>
+				</p>
+				<h3>This</h3>
+				<p><code>this</code> - is it.</p>
+			</div>
+		</div>
+		<!-- /.chapter functions, methods & objects -->
+		<div class="chapter">
+			<h2>BOM, DOM & Global JS Objects</h2>
+			<div>
+				<h3>BOM: The Window Object</h3>
+				<p class="example">Properties:</p>
+				<p><code>window.innerWidth</code> - viewport width</p>
+				<p><code>window.innerHeight</code> - viewport height</p>
+				<p><code>window.pageXOffset</code> - horizontal scroll</p>
+				<p><code>window.pageYOffset</code> - vertical scroll</p>
+				<p><code>window.screenX</code> - pointer x position</p>
+				<p><code>window.screenY</code> - pointer y position</p>
+				<p><code>window.location</code> - current url</p>
+				<p><code>window.document</code> - document object</p>
+				<p><code>window.history</code> - history object</p>
+				<p><code>window.history.length</code> - history length</p>
+				<p><code>window.screen</code> - screen object</p>
+				<p><code>window.screen.width</code> - screen width</p>
+				<p><code>window.screen.height</code> - screen height</p>
+				<p class="example">Methods:</p>
+				<p><code>window.alert()</code> - alert popup</p>
+				<p><code>window.open()</code> - new window</p>
+				<p><code>window.print()</code> - print page</p>
+				<h3>DOM: The Document Object</h3>
+				<p class="example">Properties:</p>
+				<p><code>document.title</code> - title</p>
+				<p><code>document.lastModified</code> - date modified</p>
+				<p><code>document.URL</code> - returns url string</p>
+				<p><code>document.domain</code> - returns domain</p>
+				<p class="example">Methods:</p>
+				<p><code>document.write()</code> - writes text to the document</p>
+				<p><code>document.getElementById()</code> - returns an element that matches ID</p>
+				<p><code>document.querySelectorAll()</code> - returns a list that matches CSS selector</p>
+				<p><code>document.createElement()</code> - creates new element</p>
+				<p><code>document.createTextNode()</code> - creates new text node</p>
+				<p class="output"><script type="text/javascript">
+					document.write('Last mod: ' + document.lastModified);
+				</script></p>
+				<h3>Global Objects: String Object</h3>
+				<p class="example">Properties:</p>
+				<p><code>length</code> - returns number of characters</p>
+				<p class="example">Methods:</p>
+				<p><code>toUpperCase()</code></p>
+				<p><code>toLowerCase()</code></p>
+				<p><code>charAt()</code> - takes an index number as a parameter and returns a character</p>
+				<p><code>indexOf()</code> - takes characters as a parameter and returns an index number</p>
+				<p><code>lastIndexOf()</code> - takes characters as a parameter and returns an index number</p>
+				<p><code>substring()</code> - takes two indexes (separated by comma) and returns characters (first included, last not)</p>
+				<p><code>split()</code> - takes characters, returns an array (splits by chars)</p>
+				<p><code>trim()</code> - removes white space before and after</p>
+				<p><code>replace()</code> - takes two values and replaces the first found value with the one specified</p>
+				<p><code>replaceAll()</code> - takes two values and replaces all found values with the one specified</p>
+				<p class="output"><script type="text/javascript">
+					const phrase = 'One day can change everything... ';
+					document.write(phrase.replaceAll(' ', '_'));
+				</script></p>
+				<h3>Global Objects: Number Object</h3>
+				<p class="example">Methods:</p>
+				<p><code>isNaN()</code> - checks if the value is not a number (NaN)</p>
+				<p><code>toFixed()</code> - rounds to specified decimal places (returns a string)</p>
+				<p><code>toPrecision()</code> - rounds to total number of places (returns a string)</p>
+				<p><code>toExponential()</code> - returns a string representing the number in exponential notation</p>
+				<p class="output"><script type="text/javascript">
+					const ppi48c1 = 929 / 48;
+					const ppi55c1 = 1085 / 55;
+					document.write(ppi48c1.toFixed(2) + ' ' + ppi55c1.toFixed(2));
+				</script></p>
+				<h3>Global Objects: Math Object</h3>
+				<p class="example">Properties:</p>
+				<p><code>Math.PI</code> - returns pi</p>
+				<p class="example">Methods:</p>
+				<p><code>Math.round()</code> - rounds number to the nearest integer</p>
+				<p><code>Math.sqrt(<i>n</i>)</code> - returns square root of positive number</p>
+				<p><code>Math.ceil()</code> - rounds number up to the nearest integer</p>
+				<p><code>Math.floor()</code> - rounds number down to the nearest integer</p>
+				<p><code>Math.random()</code> - returns a random number between 0 (inclusive) & 1 (n/in)</p>
+				<p class="output"><script type="text/javascript">
+					document.write('Random number: ' + Math.floor((Math.random() * 100) + 1));
+				</script></p>
+				<h3>Global Objects: Date Object</h3>
+				<p class="example">Creating an Instance of the Date Object:</p>
+				<p><code>var now = new Date();</code></p>
+				<p><code>var date = new Date(2001, 01, 01);</code> - month 0-11</p>
+				<p><code>var dateAndTime = new Date(2001, 01, 01, 01, 01, 01);</code></p>
+				<p class="example">Methods:</p>
+				<p><code>getFullYear()</code> / <code>setFullYear()</code></p>
+				<p><code>getMonth()</code> / <code>setMonth()</code> (0-11)</p>
+				<p><code>getDate()</code> / <code>setDate()</code></p>
+				<p><code>getDay()</code> (0-6), Sunday is 0</p>
+				<p><code>getHours()</code> / <code>setHours()</code></p>
+				<p><code>getMinutes()</code> / <code>setMinutes()</code></p>
+				<p><code>getSeconds()</code> / <code>setSeconds()</code></p>
+				<p><code>getMilliseconds()</code> / <code>setMilliseconds()</code></p>
+				<p><code>getTime()</code> / <code>setTime()</code> - number of <strong>milliseconds</strong> since 1970</p>
+				<p><code>getTimezoneOffset()</code> - returns timezone offset in <strong>mins</strong> for locale</p>
+				<p><code>toDateString()</code> - returns human readable date</p>
+				<p><code>toTimeString()</code> - returns human readable time</p>
+				<p><code>toString()</code> - returns a string representing the specified date</p>
+				<p class="output"><script type="text/javascript">
+					const rightNow = new Date();
+					document.write(rightNow.toString());
+				</script></p>
+			</div>
+		</div>
+		<!-- /.chapter BOM DOM & global js obj -->
+		<div class="chapter">
+			<h2>Decisions & Loops</h2>
+			<div>
+				<p><code>(a &gt; b)</code> - simple condition, two operands</p>
+				<p><code>(a + b) &gt; (c + d)</code> - expressions as operands</p>
+				<h3>Comparison Operators</h3>
+				<p><code>==</code> - equal to</p>
+				<p><code>===</code> - strict equal to</p>
+				<p><code>!=</code> - not equal to</p>
+				<p><code>!==</code> - strict not equal to</p>
+				<p><code>&gt;</code> - greater than</p>
+				<p><code>&gt;=</code> - greater than or equal to</p>
+				<p><code>&lt;</code> - less than</p>
+				<p><code>&lt;=</code> - less than or equal to</p>
+				<p class="output"><script type="text/javascript">
+					const a = 9;
+					const b = 6;
+					if (a>b) {
+						document.write('a is greater than b')
+					} else {
+						document.write('a is less than b')
+					}
+				</script></p>
+				<h3>Logical Operators</h3>
+				<p><code>&&</code> - logical and (both must be true)</p>
+				<p><code>||</code> - logical or (at least one must be true)</p>
+				<p><code>!</code> - logical not (not true is false, duh)</p>
+				<h3>If Statement</h3>
+				<p><code>
+					if (<i>true</i>) {<br>
+					<i>run code</i>;<br>
+					}
+				</code></p>
+				<h3>If...Else Statement</h3>
+				<p><code>
+					if (<i>true</i>) {<br>
+					<i>run code 1</i>;<br>
+					} else {<br>
+					<i>run code 2</i>;<br>
+					}
+				</code></p>
+				<h3>Switch Statement</h3>
+				<p><code>
+					let number = 1;<br>
+					<br>
+					switch (number) {<br>
+					<br>
+					case 1:<br>
+					<i>run code 1</i>;<br>
+					break;<br>
+					<br>
+					case 2:<br>
+					<i>run code 2</i>;<br>
+					break;<br>
+					<br>
+					case 3:<br>
+					<i>run code 3</i>;<br>
+					break;<br>
+					<br>
+					default:<br>
+					<i>run default code</i>;<br>
+					break;<br>
+					<br>
+					}
+				</code></p>
+				<h3>Type Coercion</h3>
+				<p><code>'1' == 1</code> - true</p>
+				<p><code>'1' != 1</code> - false</p>
+				<p><code>'1' === 1</code> - false</p>
+				<p><code>'1' !== 1</code> - true</p>
+				<p class="output"><script type="text/javascript">
+					const string = '1';
+					const number = 1;
+					if (string === number) {
+						document.write("'1' is equal to 1");
+					} else {
+						document.write("'1' is not strictly equal to 1");
+					}
+				</script></p>
+				<h3>Truthy & Falsy Values</h3>
+				<p class="example">Truthy:</p>
+				<p><code>var = true;</code></p>
+				<p><code>var = 1;</code></p>
+				<p><code>var = 9/3;</code></p>
+				<p><code>var = 'string';</code></p>
+				<p><code>var = 'true';</code></p>
+				<p><code>var = 'false';</code></p>
+				<p><code>var = '0';</code></p>
+				<p class="example">Falsy:</p>
+				<p><code>var = false;</code></p>
+				<p><code>var = 0;</code></p>
+				<p><code>var = 9/'three';</code> - NaN</p>
+				<p><code>var = '';</code> - null</p>
+				<p><code>var;</code> - undefined</p>
+				<h3>Unary Operator</h3>
+				<p><code>
+					let truthyVariable = 'whatever';<br>
+					if (truthyVariable) { <b>//<i>just one operand</i></b><br> 
+						document.write('Unary Operator Did This...');<br>
+					}
+				</code></p>
+				<p class="output"><script type="text/javascript">
+					let truthyVar = 'false';
+					if (truthyVar) {
+						document.write('Unary Operator Was Here');
+					}
+				</script></p>
+				<h3>Loops</h3>
+				<p>! In general, you should use a for loop when you know how many times the loop should run. If you want the loop to break based on a condition other than the number of times it runs, you should use a while loop.</p>
+				<p class="example"><b>for</b> loop (counter loop):</p>
+				<p><code>
+					for (var i = 0; i < 10; i++) {<br>
+					<i>run this code</i>;<br>
+					}
+				</code></p>
+				<p><code>(var i = 0; i < 10; i++)</code> - condition (counter)</p>
+				<p><code>var i = 0;</code> - initialization</p>
+				<p><code>i &lt; 10;</code> - condition</p>
+				<p><code>i++</code> - update (i = i + 1)</p>
+				<p class="output"><script type="text/javascript">
+					let msg = '';
+					let prices = [299, 599, 999];
+					for (var i = 0; i < prices.length; i++) {
+						msg += prices[i] + '<br>';
+						console.log('price ' + (i + 1) + ': ' + prices[i]);
+					}
+					document.write(msg);
+				</script></p>
+				<p class="example"><b>while</b> loop (condition loop):</p>
+				<p><code>
+					while (<i>condition</i>) { //<i>condition = true</i><br>
+					<i>run this code</i>;<br>
+					}
+				</code> (code will run as long as the condition is true)</p>
+				<p class="example"><b>do...while</b> loop:</p>
+				<p><code>
+					do {<br>
+					<i>run this code</i>;<br>
+					} while (<i>condition</i>);
+				</code> (code will run at least once even if the condition is not met)</p>
+
+			</div>
+		</div>
+		<!-- /.chapter decisions & loopy loops -->
+		<div class="chapter">
+			<h2>Document Object Model</h2>
+			<div>
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

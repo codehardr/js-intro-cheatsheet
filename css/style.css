@@ -1,0 +1,66 @@
+body {
+	color: #dfdfdf;
+	background-color: #181818;
+	font-family: 'Gill Sans', sans-serif;
+	overflow-x: hidden;
+}
+code {
+	color: black;
+	background-color: #dfdfdf;
+	padding: 2px 4px;
+	border-radius: 3px;
+	font-size: 1.1em;
+	display: inline-block;
+}
+h1 {
+	letter-spacing: 0.25em;
+	text-align: right;
+	color: springgreen;
+	font-size: 2.25em;
+	text-shadow: 0 0 2px springgreen;
+}
+h2 {
+	letter-spacing: 0.15em;
+	color: white;
+}
+h3 {
+	letter-spacing: 0.1em;
+	font-weight: normal;
+}
+.main {
+	width: 75%;
+	max-width: 900px;
+	margin: auto;
+	margin-bottom: 30px;
+}
+.chapter {
+	background-color: #212121;
+	padding: 5px 20px;
+	margin-bottom: 5px;
+	border-radius: 5px;
+}
+.value {
+	font-family: monospace;
+	font-size: 1.1em;
+	border: 1px solid #dfdfdf;
+	padding: 2px 4px;
+	border-radius: 3px;
+}
+.example {
+	background-color: forestgreen;
+	color: white;
+	display: inline;
+	padding: 3px 6px;
+	border-radius: 3px;
+}
+.output {
+	/*display: none;*/
+	color: springgreen;
+}
+#endPic {
+	position: relative;
+	float: right;
+	right: -100px;
+	transform: scaleX(-1);
+	margin-bottom: 10px;
+}
